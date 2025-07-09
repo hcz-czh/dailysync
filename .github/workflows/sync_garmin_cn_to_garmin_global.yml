@@ -4,7 +4,11 @@ on:
   workflow_dispatch:
   schedule:
     #  每6小时检查一次
-    - cron: "0 */4 * * *"
+    - cron: "0 */6 * * *"
+    # 每天中国时间早上 8:00 (UTC 00:00)
+    - cron: "0 0 * * *"
+    # 每天中国时间晚上 22:00 (UTC 14:00)
+    - cron: "0 14 * * *"
   push:
     branches:
       - main
